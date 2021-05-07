@@ -2,14 +2,12 @@
 public class Adivina{
     int numero = (int)(Math.random()*100);
     private int opción;
+    Interfaz interfaz = new Interfaz();
 
-
-public Adivina(int opción){
-    this.opción=opción;
-}
 
 public void Juego(){
     for(int contador=1; contador<=4;contador++){
+        int opción= interfaz.leerEntero("Digite un número (intento"+ contador+"):");
         if(this.opción>numero){
             System.out.println("El número que estoy pensando es menor a"+this.opción);
         }
@@ -22,7 +20,9 @@ public void Juego(){
             }
         }
     }
+    else{
         System.out.println("Lo siento has perdido");
+    }
         
     }
 }
